@@ -1,0 +1,20 @@
+classdef ExogenousGenerator
+
+    properties (SetAccess = private)
+        w
+        S
+    end
+    
+    methods
+        function obj = ExogenousGenerator(S)
+            obj.S = S;
+        end
+        
+        function d = Sys_Dynamics(obj, freq)
+            k = size(obj.w,2);
+            dw = double(subs(S, delta, freq)) * obj.w
+            
+        end
+    end
+end
+
