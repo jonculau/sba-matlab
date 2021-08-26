@@ -21,7 +21,7 @@ for freq = [0.3  0.5]
     Sw = double(subs(blkdiag(Phi, Phi), qq, InitialState)); % B \Omega
 
     M = double(subs([s(g).A + s(g).B * K.g(:, 1:12) s(g).B * K.g(:, 13:end);
-                blkdiag(Gam, Gam) * s(g).C + blkdiag(Gam, Gam) * s(g).D * K.g(:, 1:12) blkdiag(Phi, Phi) + blkdiag(Gam, Gam) * s(g).D * K.g(:, 13:end)], d, InitialState));
+                blkdiag(Gam, Gam) * s(g).C + blkdiag(Gam, Gam) * s(g).D * K.g(:, 1:12) blkdiag(Phi, Phi) + blkdiag(Gam, Gam) * s(g).D * K.g(:, 13:end)], qq, InitialState));
     U = [];
 
     for i = 1:h
