@@ -9,6 +9,6 @@ authors:
 title: "Multi-Resonant Controller for Frequency-Varying Disturbance Rejection in Stewart Platforms Matlab Project"
 version: 1.0
 date-released: 2021-08-25
-publisher = {GitHub},
-journal = {GitHub repository},
-url = "https://github.com/jonculau/sba-matlab"
+publisher: {GitHub},
+journal: {GitHub repository},
+url: "https://github.com/jonculau/sba-matlab"
