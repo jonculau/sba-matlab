@@ -1,14 +1,12 @@
 cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
 authors:
-  - family-names: Culau
-    given-names: Jonathan
-  - family-names: Castro
-    given-names: Rafael da Silveira
-  - family-names: Pimentel
-    given-names: Guilherme Araújo
-title: "Multi-Resonant Controller for Frequency-Varying Disturbance Rejection in Stewart Platforms Matlab Project"
-version: 1.0
+- family-names: "Culau"
+  given-names: "Jonathan"
+- family-names: "Castro"
+  given-names: "Rafael da Silveira"
+- family-names: "Pimentel"
+  given-names: "Guilherme Araújo"
+title: "Multi-Resonant Controller for Frequency-Varying Disturbance Rejection in Stewart Platforms Matlab Code"
 date-released: 2021-08-25
-publisher = {GitHub},
-journal = {GitHub repository},
-url = "https://github.com/jonculau/sba-matlab"
+url: "https://github.com/jonculau/sba-matlab"
