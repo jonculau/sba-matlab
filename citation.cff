@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+authors:
+  - family-names: Culau
+    given-names: Jonathan
+title: "Multi-Resonant Controller for Frequency-Varying Disturbance Rejection in Stewart Platforms Matlab Project"
+version: 1.0
+date-released: 2021-08-25
+publisher = {GitHub},
+journal = {GitHub repository},
