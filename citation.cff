@@ -9,6 +9,4 @@ authors:
   given-names: "Guilherme Araújo"
 title: "Multi-Resonant Controller for Frequency-Varying Disturbance Rejection in Stewart Platforms Matlab Code"
 date-released: 2021-08-25
-url: "https://github.com/jonculau/sba-matlab",
-publisher: "GitHub",
-journal: "GitHub repository"
+url: "https://github.com/jonculau/sba-matlab"
