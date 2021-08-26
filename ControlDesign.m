@@ -56,7 +56,7 @@ Phi = blkdiag(Phi, Phi, Phi); % diagonolize p times
 Gam = blkdiag(Gam, Gam, Gam);
 
 %% Polytope vertices
-qq = [d; delta]; % add IMP time varying parameter
+qq = [qq; delta]; % add IMP time varying parameter
 th_max = 25 * pi / 180;
 w_max = 5;
 lim = [];
@@ -123,5 +123,3 @@ P = [];
 
 [K.g, P.g] = lmi_with_exp_decay(sa(g).A, sa(g).B, p, 0.05, 15);
 
-% [K.r, P.r] = lmi_with_exp_decay( sa(r).A, sa(r).B, p, 0.25, 500);
-% [K.t, P.t] = lmi_with_exp_decay( sa(t).A, sa(t).B, [], 0.25, 500);

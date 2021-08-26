@@ -1,9 +1,6 @@
 %% Creates Object
 Ts = 1e-3;
 
-addpath('00 - Objects');
-addpath('01 - Control Functions');
-addpath('02 - Utilities');
 sp = StewartPlatform;
 InitialCondtions = [];
 InitialCondtions.q = Quaternion.ea2q([0 0 0]);
@@ -11,7 +8,7 @@ InitialCondtions.w = [0; 0; 0];
 InitialCondtions.p = sp.tT + 0;
 InitialCondtions.v = [0; 0; 0];
 
-for freq = [0.3; 0.5]
+for freq = [0.3  0.5]
 
     sp = StewartPlatform(Ts, InitialCondtions);
     %% Tests
@@ -21,7 +18,7 @@ for freq = [0.3; 0.5]
                 sp.x(1).w;
                 freq];
 
-    Sw = double(subs(blkdiag(Phi, Phi), qq, InitialState)); % % B \Omega
+    Sw = double(subs(blkdiag(Phi, Phi), qq, InitialState)); % B \Omega
 
     M = double(subs([s(g).A + s(g).B * K.g(:, 1:12) s(g).B * K.g(:, 13:end);
                 blkdiag(Gam, Gam) * s(g).C + blkdiag(Gam, Gam) * s(g).D * K.g(:, 1:12) blkdiag(Phi, Phi) + blkdiag(Gam, Gam) * s(g).D * K.g(:, 13:end)], d, InitialState));
@@ -43,13 +40,12 @@ for freq = [0.3; 0.5]
 
     Sigma = Pi_Sigma(13:end, :);
 
-    w = 0.000325 * ones(12 * h, 1);
-    w = 0 * ones(12 * h, 1);
-    x_e = [x; -Sigma * w];
+    w = [5.6e-4 * ones(6 * h, 1); ones(6 * h, 1)];
+    z = [x; -Sigma * w];
 
-    [x_e' * P.g * x_e]
+    [z' * P.g * z]
 
-    if [x_e' * P.g * x_e] > 1
+    if [z' * P.g * z] > 1
         disp 'Invalid intial values';
         return
     end

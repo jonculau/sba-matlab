@@ -8,7 +8,6 @@ r = 1; % rotational id
 t = 2; % translational id
 g = 3; % unified
 addpath('objects');
-addpath('01 - Control Functions');
 addpath('utils');
 
 %% Initialization
