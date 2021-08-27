@@ -73,11 +73,11 @@ for freq = [0.3  0.5]
     for i = 1:round(Ttotal / sp.Ts)
 
         % rotational subsystem - s0
-        x.r = [sp.x(i).q.e * sign(sp.x(i).q.n) - Ref.r; sp.x(i).w];
+        x.r = [sp.x(i).q.e; sp.x(i).w];
         e.r = -s(r).C * x.r;
 
         % translational subsystem - s1
-        x.t = [sp.x(i).p - Ref.t; sp.x(i).v];
+        x.t = [sp.x(i).p - Ref.t; sp.x(i).v]; % Ref.t is a offset, we changed the coordinates to the origin be at home position
         e.t = -s(t).C * x.t;
 
         % control law
