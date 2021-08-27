@@ -54,7 +54,7 @@ for freq = [0.3  0.5]
     disp 'Starting simulation...';
 
     %% Simulation
-    Ttotal = 30;
+    Ttotal = 60;
 
     Ref = []; Ref.r = [0; 0; 0]; Ref.t = sp.tT;
 
@@ -74,11 +74,11 @@ for freq = [0.3  0.5]
 
         % rotational subsystem - s0
         x.r = [sp.x(i).q.e * sign(sp.x(i).q.n) - Ref.r; sp.x(i).w];
-        e.r = s(r).C * x.r;
+        e.r = -s(r).C * x.r;
 
         % translational subsystem - s1
         x.t = [sp.x(i).p - Ref.t; sp.x(i).v];
-        e.t = s(t).C * x.t;
+        e.t = -s(t).C * x.t;
 
         % control law
         u = K.g(:, 1:12) * [x.r; x.t] + K.g(:, 13:end) * [xi.r.Sys_Dynamics(e.r, delta, freq); xi.t.Sys_Dynamics(e.t, delta, freq)];
